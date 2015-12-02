@@ -8,4 +8,10 @@ require "benchmark_profiler"
 
 # (If you use this, don't forget to add pry to your Gemfile!)
 require "pry"
+
+def reload!
+  files = $LOADED_FEATURES.select { |feat| feat =~ /\/benchmark_profiler\// }
+  files.each { |file| load file }
+end
+
 Pry.start
