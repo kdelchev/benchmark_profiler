@@ -4,6 +4,11 @@ Welcome to your new gem! In this directory, you'll find the files you need to be
 
 TODO: Delete this and the text above, and describe your gem
 
+## Requirements
+
+* [ab](https://httpd.apache.org/docs/2.2/programs/ab.html) - Apache HTTP server benchmarking tool
+* [graphviz](http://graphviz.org/) - `brew install graphviz`
+
 ## Installation
 
 Add this line to your application's Gemfile:
