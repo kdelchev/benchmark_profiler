@@ -10,7 +10,7 @@ module BenchmarkProfiler
 
     @options = {
       steps: [4, 40, 400],
-      concurrency: 1,
+      concurrency: [1, 2, 4],
       url: 'http://localhost:5004/v1/74eb402b-e159-4027-9363-60772e6e8930/customers',
       username: 'secret',
       password: ''

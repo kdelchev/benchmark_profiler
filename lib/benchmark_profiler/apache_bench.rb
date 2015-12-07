@@ -4,9 +4,9 @@ module BenchmarkProfiler
   module ApacheBench
     # ab -n 1 -c 1 -A secret: http://localhost:5004/v1/74eb402b-e159-4027-9363-60772e6e8930/customers
     class << self
-      def measure(step, config)
+      def measure(step, concurrency, config)
         log_data = run(step,
-                       config[:concurrency],
+                       concurrency,
                        "#{config[:username]}:#{config[:password]}",
                        config[:url])
         parse(log_data)

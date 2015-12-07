@@ -20,7 +20,8 @@ module BenchmarkProfiler
       #     :queries_per_second => 0.82,
       #     :complete_requests => 10.0,
       #     :failed_requests => 0.0 } }
-      def print(data)
+      def print(step, concurrency, data)
+        p "--- steps: #{step}, cuncurrency: #{concurrency}"
         p data
       end
     end

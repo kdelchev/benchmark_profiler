@@ -11,10 +11,12 @@ module BenchmarkProfiler
     def run(options = {})
       config = Config.add(options)
       results = {}
-      config[:steps].each do |step|
-        results[step] = ApacheBench.measure(step, config)
+      config[:steps].each do |step| # 4 40 400 4000
+        config[:concurrency].each do |concurrency| # 1 2 4
+          results[step] = ApacheBench.measure(step, concurrency, config)
+          Report.print(step, concurrency, results)
+        end
       end
-      Report.print(results)
     end
   end
 end
